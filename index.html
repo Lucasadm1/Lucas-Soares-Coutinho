@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VisionAnalyst Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: 'var(--color-brand-50)',
+                100: 'var(--color-brand-100)',
+                200: 'var(--color-brand-200)',
+                300: 'var(--color-brand-300)',
+                400: 'var(--color-brand-400)',
+                500: 'var(--color-brand-500)',
+                600: 'var(--color-brand-600)',
+                700: 'var(--color-brand-700)',
+                800: 'var(--color-brand-800)',
+                900: 'var(--color-brand-900)',
+              },
+              accent: {
+                500: 'var(--color-accent-500)',
+                600: 'var(--color-accent-600)',
+              },
+              bg: {
+                main: 'var(--color-bg-main)',
+                card: 'var(--color-bg-card)',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Plus Jakarta Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+      
+      :root {
+        /* Paleta Indigo (Padrão) */
+        --color-brand-50: #eef2ff;
+        --color-brand-100: #e0e7ff;
+        --color-brand-200: #c7d2fe;
+        --color-brand-300: #a5b4fc;
+        --color-brand-400: #818cf8;
+        --color-brand-500: #6366f1;
+        --color-brand-600: #4f46e5;
+        --color-brand-700: #4338ca;
+        --color-brand-800: #3730a3;
+        --color-brand-900: #312e81;
+        
+        /* Accent Teal (Padrão) */
+        --color-accent-500: #14b8a6;
+        --color-accent-600: #0d9488;
+
+        /* Backgrounds */
+        --color-bg-main: #f8fafc; /* Slate-50/100 mix */
+        --color-bg-card: #ffffff;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--color-bg-main);
+        color: #0f172a; /* Slate-900 */
+        transition: background-color 0.3s ease;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      /* Smooth transitions */
+      .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 200ms;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-bg-main);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+
+      @media print {
+        @page { margin: 0; }
+        body { background-color: white !important; -webkit-print-color-adjust: exact; }
+        .no-print { display: none !important; }
+        .print-only { display: block !important; }
+        .page-break { page-break-before: always; }
+        h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
